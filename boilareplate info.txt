@@ -1,0 +1,11 @@
+
+boilareplate create idea link:
+_______________________________
+	1)	https://dev.to/nsebhastian/step-by-step-react-configuration-2nma
+
+	2)  https://medium.com/@leonardobrunolima/react-tips-working-with-relative-path-using-create-react-app-fe55c5f97a21
+
+	3)  https://github.com/nsebhastian/my-react-boilerplate
+
+
+
