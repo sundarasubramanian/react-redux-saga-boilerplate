@@ -1,35 +1,24 @@
-import React from 'react';
-//import Roters from 'components/RouterComponent';
-export default class Home extends React.Component {
+import React,{Component} from 'react';
+import RouterComponent from 'components/RouterComponent';
+import HeaderComp from 'components/Navigation';
+
+export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
-  employees = () => {
-    if (this.props.selectEmployeesDetails.length==0) return;
-    return this.props.selectEmployeesDetails.map(item=>{
-      return(
-          <tr>
-            <td>{item.id}</td>
-            <td>{item.employee_name}</td>
-          </tr>
-        )
-    })
-  };
+
   render() {
+    //console.log(this.props)
+    const {match,isAuthendicated,getlogoutStatus}=this.props
     return (
+      <React.Fragment>
+        <HeaderComp isAuthendicated={isAuthendicated} getlogoutStatus={getlogoutStatus} handleLogout={this.props.handleLogout}/>
+      
+          <RouterComponent isAuthendicated={isAuthendicated} match={match} getlogoutStatus={getlogoutStatus} />
      
-      <div className="row no-gutters">
-        <div className="col-sm-12 ">
-          <table className="table table-border">
-            <tr>
-              <th>Employees Id</th>
-              <th>Employess Name</th>
-            </tr>
-            {this.employees()}
-          </table>
-        </div>
-      </div>
+      </React.Fragment>
+      
       
     );
   }

@@ -2,5 +2,9 @@ import { createSelector } from 'reselect';
 
 const planState = state => state.get('employees');
 
-export const selectEmployeesDetails = () =>
-  createSelector(planState, bstate => bstate.get('employeesDetails'));
+export const getlogoutStatus = () => createSelector([planState], bstate => bstate.get('logout'));
+
+export const getAuthendicate=()=>createSelector(
+  planState,
+  bstate=> bstate.get('isAuthendicate') 
+  )

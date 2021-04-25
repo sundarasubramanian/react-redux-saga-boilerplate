@@ -14,14 +14,22 @@ import * as selectors from './selectors';
 
 import AppReducer from './reducer';
 import AppSaga from './sagas';
-import Home from 'containers/Home'
+import Home from 'containers/Home';
+import 'antd/dist/antd.css';
+import 'antd/dist/antd.less'
+import RouterComponent from 'components/RouterComponent';
+import HeaderComp from 'components/Navigation';
+import 'styles/fonts.scss';
+import 'styles/globalStyles.scss';
+import 'styles/spacing.scss';
+
 
 class App extends Component {
   constructor(props) {
     super(props);
   }
 componentDidMount(){
-  this.props.getEmployeesDetails();
+
 }
   render() {
     return (
@@ -33,10 +41,13 @@ componentDidMount(){
               render={props => (
                 <Home
                   {...props}
-                  selectEmployeesDetails={this.props.selectEmployeesDetails}
+                  isAuthendicated={this.props.isAuthendicated}
+                  //selectEmployeesDetails={this.props.selectEmployeesDetails}
+                  handleLogout={this.props.handleLogout}
+                  getlogoutStatus={this.props.getlogoutStatus}
                 />
               )}
-              path="/home"
+              path="/"
             />
           </Switch>
         </React.Fragment>
@@ -47,15 +58,15 @@ componentDidMount(){
 }
 function mapStateToProps(state) {
   return createStructuredSelector({
-    selectEmployeesDetails: selectors.selectEmployeesDetails(),
-  
+    getlogoutStatus: selectors.getlogoutStatus(),
+    isAuthendicated:selectors.getAuthendicate(),  
   });
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    getEmployeesDetails: () => {
-      dispatch(actions.getEmployeesDetails());
+    handleLogout: () => {
+      dispatch(actions.handleLogout());
     },
    
   };

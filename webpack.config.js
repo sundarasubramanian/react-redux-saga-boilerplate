@@ -1,5 +1,5 @@
 module.exports = {
-    entry: './index.js',
+    entry: ['react-hot-loader/patch', './src'],//'./index.js',
     output: {
         filename: 'bundle.js'
     },
