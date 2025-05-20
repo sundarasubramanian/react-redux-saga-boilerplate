@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
   	"target":"ES6",
-  	"module":"common.js",
-  	"allowSyntheticDefaultImport":true,
+  	"module":"ES2015",
+  	"allowSyntheticDefaultImports":true,
     "baseUrl": "src",
     "paths":{
-    	"~/*":["src/**/*"]
+    	"~/*":["src/*"]
     }
   },
   "include": ["src/**/*"]
