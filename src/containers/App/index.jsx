@@ -15,8 +15,9 @@ import * as selectors from './selectors';
 import AppReducer from './reducer';
 import AppSaga from './sagas';
 import Home from 'containers/Home';
-import 'antd/dist/antd.css';
-import 'antd/dist/antd.less'
+// import 'antd/dist/antd.css';
+// import 'antd/dist/antd.less'
+import 'antd/dist/reset.css';
 import RouterComponent from 'components/RouterComponent';
 import HeaderComp from 'components/Navigation';
 import 'styles/fonts.scss';

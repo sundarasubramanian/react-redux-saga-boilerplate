@@ -1,5 +1,5 @@
 import fetchDefaults from 'fetch-defaults';
-import * as Cookies from "js-cookie"; 
+import Cookies from "js-cookie"; 
 
 export const apiFetch = function(url, data) {
   const serverUrl = 'https://reqres.in';

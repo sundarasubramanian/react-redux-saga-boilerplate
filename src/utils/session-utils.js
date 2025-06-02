@@ -1,5 +1,7 @@
 
-import * as Cookies from "js-cookie"; 
+// import Cookies from "js-cookie"; 
+import Cookies from "js-cookie"; 
+
 
 export function setCookie(response) {
   Cookies.set('token', response);

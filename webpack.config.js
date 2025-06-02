@@ -18,6 +18,14 @@ module.exports = {
                   'less-loader',
                 ],
             },
+            {
+            test: /\.scss$/,
+            use: [
+                "style-loader", // creates style nodes from JS strings
+                "css-loader", // translates CSS into CommonJS
+                "sass-loader" // compiles Sass to CSS, using Node Sass by default
+            ]
+        }
         ]
     },
     devServer: {
@@ -25,5 +33,8 @@ module.exports = {
     },
     resolve: {
     extensions: ['.js', '.jsx'],
+    fallback: {
+      url: require.resolve("url/")
+    }
   }
 };
